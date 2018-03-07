@@ -1,8 +1,5 @@
 package oop.pset1.view;
 
-import java.util.Map;
-import java.util.stream.Collectors;
-
 public class SummaryDisplayer {
     public void display(Summary summary) {
 

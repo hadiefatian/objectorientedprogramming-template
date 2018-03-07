@@ -13,6 +13,7 @@ public class Summary {
     public List<String> getMostRatedFilms() {
         return mostRatedFilms;
     }
+
     public void setMostRatedFilms(List<String> mostRatedFilms) {
         this.mostRatedFilms = mostRatedFilms;
     }
@@ -21,6 +22,7 @@ public class Summary {
     public List<String> getMostAppearingMovieGenres() {
         return mostAppearingMovieGenres;
     }
+
     public void setMostAppearingMovieGenres(List<String> mostAppearingMovieGenres) {
         this.mostAppearingMovieGenres = mostAppearingMovieGenres;
     }
@@ -29,6 +31,7 @@ public class Summary {
     public List<String> getMostHiredActors() {
         return mostHiredActors;
     }
+
     public void setMostHiredActors(List<String> mostHiredActors) {
         this.mostHiredActors = mostHiredActors;
     }
@@ -37,6 +40,7 @@ public class Summary {
     public List<String> getMaleFemaleRatioPercentage() {
         return maleFemaleRatioPercentage;
     }
+
     public void setMaleFemaleRatioPercentage(List<String> maleFemaleRatioPercentage) {
         this.maleFemaleRatioPercentage = maleFemaleRatioPercentage;
     }

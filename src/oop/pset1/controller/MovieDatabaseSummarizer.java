@@ -65,7 +65,7 @@ public class MovieDatabaseSummarizer {
 
         List<String> maleFemaleRatioPercentage = gender.entrySet().stream()
                 .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
-                .map(e -> e.getKey() + " (" + ((double) e.getValue())/ actors.size() * 100 + "%)")
+                .map(e -> e.getKey() + " (" + ((double) e.getValue()) / actors.size() * 100 + "%)")
                 .collect(Collectors.toList());
 
 

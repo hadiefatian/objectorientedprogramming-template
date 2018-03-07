@@ -12,6 +12,7 @@ public class Movie {
     public List<String> getGenre() {
         return genre;
     }
+
     public void setGenre(List<String> genre) {
         this.genre = genre;
     }
@@ -20,6 +21,7 @@ public class Movie {
     public String getTitle() {
         return title;
     }
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -28,6 +30,7 @@ public class Movie {
     public Double getRating() {
         return rating;
     }
+
     public void setRating(Double rating) {
         this.rating = rating;
     }

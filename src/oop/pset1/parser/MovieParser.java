@@ -19,7 +19,7 @@ public class MovieParser {
             Stream<String> lines = Files.lines(Paths.get(filePath));
             return lines.skip(1)
                     .map(line -> line.split(";"))
-                    .filter(columns -> columns.length >=23)
+                    .filter(columns -> columns.length >= 23)
                     .map(toMovie())
                     .collect(Collectors.toList());
         } catch (IOException e) {
