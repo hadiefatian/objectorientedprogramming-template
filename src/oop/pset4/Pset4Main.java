@@ -15,6 +15,7 @@ public class Pset4Main {
         Airport airport = new Airport();
         List<Luggage> arrivalLuggage = airport.travel(departureLuggage);
 
+
         // Returning the list of arrival luggage will be very useful
         // when we learn about unit testing to be able to test the behaviour
         // of the Airport class automatically
