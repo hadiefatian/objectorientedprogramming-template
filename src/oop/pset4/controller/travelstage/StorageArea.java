@@ -13,6 +13,22 @@ public class StorageArea implements TravelStage {
         // if 30 minutes is not possible, the luggage won't be stored at all, which means that
         // no waiting time will be added at all
 
-        return null;
+        LocalDateTime dropOffTime = luggage.getDropOffTime();
+        LocalDateTime departureTime = luggage.getDepartureTime();
+        LocalDateTime boardingTime = departureTime.minusMinutes( 30 );
+        Duration waitingDuration = Duration.between( dropOffTime, boardingTime );
+
+        if (isTimeToWait( dropOffTime, boardingTime )) {
+            luggage.setWaitingDuration( waitingDuration );
+        }
+        return luggage;
+
     }
+
+    private boolean isTimeToWait(LocalDateTime dropOffTime, LocalDateTime boardingTime) {
+        return dropOffTime.isBefore( boardingTime );
+    }
+
+
 }
+

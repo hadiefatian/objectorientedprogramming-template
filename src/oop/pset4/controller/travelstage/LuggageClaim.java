@@ -10,6 +10,11 @@ public class LuggageClaim implements TravelStage {
     public Luggage process(Luggage luggage) {
         // TODO add 15 minutes to the processing time
 
-        return null;
+        Duration waitingDuration = luggage.getWaitingDuration();
+        Duration processingTime = waitingDuration.plusMinutes(15);
+        luggage.setWaitingDuration(processingTime);
+
+        return luggage;
     }
+
 }

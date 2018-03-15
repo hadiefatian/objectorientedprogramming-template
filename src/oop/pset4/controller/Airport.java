@@ -23,6 +23,8 @@ public class Airport {
         // TODO apply airport travel stages per the following order
 
         // show a welcome message
+        summaryReporter.showHeader();
+
 
         // allow passengers to travel only if they show up at least 30 mins before departure time
         // drop the luggage at the drop off stand
@@ -32,10 +34,27 @@ public class Airport {
         // carry the luggage to the luggage claim with the transport cart
         // pick up the luggage from the luggage claim
 
-        // display luggage report summary for rejected luggage
-        // display luggage report summary for accepted luggage
+        List<Luggage> acceptedLuggage = departureLuggage.stream()
+                .filter( luggage -> securityControl.isAllowedToTravel( luggage ) )
+                .map( luggage -> dropOff.process( luggage ) )
+                .map( luggage -> storageArea.process( luggage ) )
+                .map( luggage -> transportCart.process( luggage ) )
+                .map( luggage -> flight.process( luggage ) )
+                .map( luggage -> transportCart.process( luggage ) )
+                .map( luggage -> luggageClaim.process( luggage ) )
+                .collect( Collectors.toList() );
 
-        return null;
+
+
+        // display luggage report summary for rejected luggage
+
+        List<Luggage> rejectedLuggage = securityControl.getRejectedLuggage();
+        summaryReporter.reportRejected( rejectedLuggage );
+
+        // display luggage report summary for accepted luggage
+        summaryReporter.reportAccepted( acceptedLuggage );
+
+        return acceptedLuggage;
     }
 
 

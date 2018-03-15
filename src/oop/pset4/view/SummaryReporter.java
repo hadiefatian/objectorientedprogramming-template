@@ -54,6 +54,5 @@ public class SummaryReporter {
 
         System.out.println(builder.toString());
     }
-
-
+    
 }

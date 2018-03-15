@@ -1,5 +1,6 @@
 package oop.pset4.util;
 
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 
 // This class is a utility class
@@ -9,7 +10,7 @@ public class TimeUtils {
     private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(TIME_PATTERN);
 
     // Does not allow anybody to create instances of this class
-    // as it is provides no value
+    // as it provides no values
     private TimeUtils() {
     }
 
@@ -50,8 +51,12 @@ public class TimeUtils {
         ZonedDateTime originTime = time.atZone(originZone);
         // obtain the destination time with the destination zone
 
+        ZoneId destinationTime = ZoneId.of("Europe/" + destination);
+        ZonedDateTime zonedDateTime = originTime.withZoneSameInstant(destinationTime);
+
         // use the method formatTime to return the formatted destination time
-        return null;
+        String formattedDestination = formatTime(zonedDateTime);
+        return formattedDestination;
     }
 
 }
